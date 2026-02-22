@@ -201,21 +201,37 @@ main {
 }
 
 
-/* 768px is the standard "Tablet/Mobile" breakpoint */
+/* This targets phones and small tablets */
 @media (max-width: 768px) {
-  .feature-row {
-    flex-direction: column; /* Stacks the text and image vertically */
-    text-align: center;     /* Centers text for better mobile look */
-    gap: 30px;              /* Reduces the gap so it fits the screen */
+
+  /* 1. Fix the Hero Section (The blue part) */
+  .hero-container, .myfeatures {
+    width: 100% !important; /* Force it to fit the screen */
+    padding: 20px !important;
+    height: auto !important; /* Let it grow vertically if needed */
   }
 
-  .feature-text, .feature-image {
-    width: 100%;            /* Ensures they take up the full width of the phone */
+  /* 2. Fix the Feature Grid (The boxes at the bottom) */
+  .f-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Stacks boxes on top of each other */
+    width: 100% !important;
+    padding: 20px !important;
+    align-items: center !important;
   }
 
-  .feature-text h3 {
-    font-size: 1.5rem;      /* Shrinks the heading slightly for small screens */
+  /* 3. Fix the Individual Cards */
+  .f-grid div, .f1, .f2, .f3 {
+    width: 90% !important; /* Makes boxes fill most of the screen width */
+    margin-bottom: 20px;
+    height: auto !important; /* Prevents text from overflowing */
+  }
+
+  /* 4. Fix the Logo and Navigation */
+  .logo {
+    max-width: 150px; /* Shrinks the logo so it doesn't crowd the top */
   }
 }
+
 
 }
