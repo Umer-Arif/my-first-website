@@ -1,0 +1,31 @@
+<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="oGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e90ff"></stop>
+      <stop offset="100%" stop-color="#ff3c3c"></stop>
+    </linearGradient>
+
+    <linearGradient id="swooshGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3c3c"></stop>
+      <stop offset="100%" stop-color="#ffae00"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- O as ring -->
+  <circle cx="120" cy="100" r="50" fill="none" stroke="url(#oGradient)" stroke-width="25"></circle>
+
+  <!-- Text -->
+  <text x="190" y="120" font-family="Inter, Poppins, sans-serif" font-size="72" font-weight="700" fill="currentColor">
+    macs
+  </text>
+
+  <!-- Speed swoosh -->
+  <path d="M60 155 Q300 210 560 140" stroke="url(#swooshGradient)" stroke-width="10" fill="none" stroke-linecap="round"></path>
+
+  <!-- Tagline -->
+  <text x="300" y="190" font-family="Inter, sans-serif" font-size="18" fill="#4da3ff" text-anchor="middle" letter-spacing="2">
+    POWERFUL · FAST · EXTENSIBLE
+  </text>
+
+</svg>

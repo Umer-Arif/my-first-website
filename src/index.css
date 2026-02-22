@@ -1,0 +1,7 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+body {
+  background-color: #25272e;
+  margin: 0;
+  color: white; /* Ensure text is visible on the black background */
