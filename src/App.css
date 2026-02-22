@@ -1,8 +1,15 @@
-html,
-body,
-#root {
-  height: 100%;
+/* 1. Global Reset & Body */
+* {
+  box-sizing: border-box; /* Crucial for mobile */
   margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background-color: #0a0a0a; /* Consistent dark background */
+  color: white;
+  font-family: sans-serif;
 }
 
 #root {
@@ -10,226 +17,150 @@ body,
   flex-direction: column;
 }
 
-
+/* 2. Header & Navigation - FIXED GAP */
 .app-header {
-  background-color: aqua;
+  background-color: #111;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 700px;
+  justify-content: space-between; /* Replaced gap: 700px */
+  padding: 10px 5%;
+  border-bottom: 1px solid #333;
 }
 
 .app-header nav {
   display: flex;
   gap: 20px;
-  font-size: 1.2em;
 }
 
-.app-footer {
-  background-color: lightcoral;
-  color: brown;
-  font-style: italic;
-  display: flex;
-  justify-content: center;
+.app-header a {
+  color: white;
+  text-decoration: none;
 }
 
+/* 3. Main Content Area */
 main {
   flex: 1;
   display: flex;
-  padding-bottom: 2rem;
-}
-
-
-.home-container {
-  display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
+/* 4. Home Page Styles */
 .myhome {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  align-items: flex-start;
   justify-content: center;
-  padding: 40px;
+  padding: 60px 10%;
   background-image: url('./assets/bg.png'),
                     linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
-
-  background-size: contain, cover; /* 'contain' for image, 'cover' for gradient */
+  background-size: contain, cover;
   background-position: right;
   background-repeat: no-repeat;
-  height: 50vh;
-  color: white;
-
+  min-height: 60vh;
 }
 
 .mygrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 50px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 25px;
+  padding: 50px 10%;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .mygrid div {
   background: rgba(255, 255, 255, 0.05);
-  padding: 50px;
+  padding: 40px;
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  padding: 30px;
-  text-align: left;
-  transition: transform 0.3s ease;
-  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-
-.mygrid div:hover{
-    transform: scale(1.05);
-    box-shadow: 0 1em 0.7em 0.2em lightblue;
+.mygrid div:hover {
+  transform: translateY(-10px);
+  border-color: #00d2ff;
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
 }
 
+/* 5. About Section - FIXED WIDTH */
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 20px;
-    margin-top: 20px;
-    width: 200%;
+  padding: 80px 10%;
+  text-align: center;
+  width: 100%; /* Fixed from 200% */
 }
-
 
 .about h1 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
+  font-size: 3rem;
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.about p {
-  max-width: 800px;
-  margin: 25px auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  padding: 0 20px;
-}
-
-.about strong {
-  color: #00d2ff;
-}
-
-
-.features-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
+/* 6. Features Page Styles */
 .myfeatures {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  font-size: 1.5em;
+  text-align: center;
+  padding: 60px 0;
+  font-size: 2.5rem;
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 .f-content {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 40px;
-
+  padding: 0 20px;
 }
-
 
 .feature-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  margin-bottom: 120px;
+  gap: 60px;
+  margin-bottom: 100px;
 }
 
-
-.feature-text {
-  flex: 1;
-  text-align: left;
-}
-
-.feature-text h3 {
-  font-size: 2rem;
-
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.feature-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-
-}
-
-
-.feature-image {
-  flex: 1.2;
-  display: flex;
-  justify-content: center;
-}
+.feature-text { flex: 1; }
+.feature-image { flex: 1.2; }
 
 .feature-image img {
   width: 100%;
-  max-width: 550px;
   border-radius: 12px;
-  border: 2px solid transparent;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: 0.4s ease;
 }
 
-
-.feature-row:hover .feature-image img {
-  transform: scale(1.05);
-  border: 2px solid #3a7bd5;
-  box-shadow: 0 20px 40px rgba(58, 123, 213, 0.2);
+/* 7. Footer */
+.app-footer {
+  background-color: #111;
+  padding: 20px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #333;
 }
 
-
-/* This targets phones and small tablets */
+/* 8. MOBILE RESPONSIVE BLOCK */
 @media (max-width: 768px) {
-
-  /* 1. Fix the Hero Section (The blue part) */
-  .hero-container, .myfeatures {
-    width: 100% !important; /* Force it to fit the screen */
-    padding: 20px !important;
-    height: auto !important; /* Let it grow vertically if needed */
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  /* 2. Fix the Feature Grid (The boxes at the bottom) */
-  .f-grid {
-    display: flex !important;
-    flex-direction: column !important; /* Stacks boxes on top of each other */
-    width: 100% !important;
-    padding: 20px !important;
-    align-items: center !important;
+  .myhome {
+    background-image: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); /* Remove img on mobile for speed */
+    text-align: center;
+    align-items: center;
+    padding: 40px 20px;
   }
 
-  /* 3. Fix the Individual Cards */
-  .f-grid div, .f1, .f2, .f3 {
-    width: 90% !important; /* Makes boxes fill most of the screen width */
-    margin-bottom: 20px;
-    height: auto !important; /* Prevents text from overflowing */
+  .mygrid {
+    grid-template-columns: 1fr; /* Stack boxes */
+    padding: 30px 20px;
   }
 
-  /* 4. Fix the Logo and Navigation */
-  .logo {
-    max-width: 150px; /* Shrinks the logo so it doesn't crowd the top */
+  .feature-row {
+    flex-direction: column !important; /* Stack text/image */
+    text-align: center;
+    gap: 30px;
   }
 
+  .about h1 { font-size: 2rem; }
 }
