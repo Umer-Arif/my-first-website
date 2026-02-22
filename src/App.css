@@ -201,14 +201,21 @@ main {
 }
 
 
+/* 768px is the standard "Tablet/Mobile" breakpoint */
 @media (max-width: 768px) {
   .feature-row {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
+    flex-direction: column; /* Stacks the text and image vertically */
+    text-align: center;     /* Centers text for better mobile look */
+    gap: 30px;              /* Reduces the gap so it fits the screen */
   }
 
-  .feature-text {
-    text-align: center;
+  .feature-text, .feature-image {
+    width: 100%;            /* Ensures they take up the full width of the phone */
   }
+
+  .feature-text h3 {
+    font-size: 1.5rem;      /* Shrinks the heading slightly for small screens */
+  }
+}
+
 }
