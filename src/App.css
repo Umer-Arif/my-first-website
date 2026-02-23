@@ -12,6 +12,8 @@ html, body, #root {
   font-family: sans-serif;
 }
 
+
+
 #root {
   display: flex;
   flex-direction: column;
@@ -25,6 +27,11 @@ html, body, #root {
   justify-content: space-between; /* Replaced gap: 700px */
   padding: 10px 5%;
   border-bottom: 1px solid #333;
+}
+
+
+.app-header svg {
+  color: #ffffff;
 }
 
 .app-header nav {
@@ -99,7 +106,7 @@ main {
 .myfeatures {
   text-align: center;
   padding: 60px 0;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
