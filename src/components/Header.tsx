@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// 1. Add ?react to the end of the path
+// @ts-ignore
 import OmacsLogo from "../assets/OmacsLogo.svg?react";
 
 const Header: React.FC = () => {
