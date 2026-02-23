@@ -33,7 +33,7 @@ html, body, #root {
 }
 
 .app-header a {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
