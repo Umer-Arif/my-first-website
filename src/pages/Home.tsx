@@ -12,7 +12,9 @@ const Home: React.FC = () => {
           <i>Editor that feels like home</i>
         </p>
         {/* Changed to lowercase to match standard routing */}
-        <button onClick={() => navigate("/features")}>More</button>
+        <button className="home-more-btn" onClick={() => navigate("/features")}>
+          More
+        </button>
       </section>
 
       <section className="mygrid">
