@@ -19,7 +19,7 @@ html, body, #root {
 
 /* 2. Header & Navigation - FIXED GAP */
 .app-header {
-  background-color: #111;
+  background-color: #111111;
   display: flex;
   align-items: center;
   justify-content: space-between; /* Replaced gap: 700px */
