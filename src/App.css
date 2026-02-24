@@ -106,18 +106,29 @@ main {
   box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
 }
 
-/* 5. About Section - FIXED WIDTH */
-.about {
-  padding: 80px 10%;
-  text-align: center;
-  width: 100%; /* Fixed from 200% */
-}
-
 .about h1 {
   font-size: 3rem;
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.about {
+  padding: 80px 20px;
+  text-align: center;
+
+  /* ADD THESE THREE LINES */
+  max-width: 850px;   /* Prevents text from stretching across the whole screen */
+  margin: 0 auto;     /* Centers the box on the page */
+  width: 90%;         /* Fallback for smaller screens */
+}
+
+.about p {
+  text-align: center;
+  line-height: 1.8;   /* Adds breathing room between lines of text */
+  font-size: 1.15rem; /* Makes the text slightly more readable */
+  margin-bottom: 25px; /* Adds space between your two paragraphs */
+  color: #ddd;        /* Softens the white slightly for better UX */
 }
 
 /* 6. Features Page Styles */
@@ -180,6 +191,13 @@ main {
     grid-template-columns: 1fr; /* Stack boxes */
     padding: 30px 20px;
   }
+
+  .about {
+  padding: 80px 10%;
+  text-align: center;
+  width: 100%; /* Fixed from 200% */
+  }
+
 
   .feature-row {
     flex-direction: column !important; /* Stack text/image */
