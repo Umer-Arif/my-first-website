@@ -140,7 +140,7 @@ main {
 .myfeatures {
   text-align: center;
   padding: 60px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -150,6 +150,7 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
+
 }
 
 .feature-row {
