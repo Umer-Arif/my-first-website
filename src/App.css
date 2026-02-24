@@ -156,9 +156,21 @@ main {
 .feature-row {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 160px;
   margin-bottom: 100px;
+  color: white;
 }
+
+.feature-row h3 + p {
+    margin-top: 15px; /* Adjust this number to get the space you want */
+    line-height: 1.6;
+}
+
+.feature-row h3 {
+    color: #a6ceff;
+}
+
+
 
 .feature-text { flex: 1; }
 .feature-image { flex: 1.2; }
