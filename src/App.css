@@ -103,15 +103,7 @@ main {
 
 }
 
-.mygrid div:visited {
-    color: purple;
-}
 
-/* This removes the underline and sets the text color to inherit from the parent */
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .mygrid div:hover {
   transform: translateY(-10px);
@@ -203,6 +195,12 @@ a {
   .mygrid {
     grid-template-columns: 1fr; /* Stack boxes */
     padding: 30px 20px;
+  }
+
+  /* Mobile Touch Feedback */
+  .mygrid div:active {
+      background-color: #444; /* Darker feedback for the tap */
+      transform: scale(0.98);   /* Slight "press" effect */
   }
 
   .about {
