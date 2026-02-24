@@ -99,11 +99,19 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   color: lightgrey;
+  text-decoration: none;
 
 }
 
+.mygrid div:visited {
+    color: purple;
+}
 
-
+/* This removes the underline and sets the text color to inherit from the parent */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .mygrid div:hover {
   transform: translateY(-10px);
