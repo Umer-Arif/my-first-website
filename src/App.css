@@ -197,11 +197,6 @@ main {
     padding: 30px 20px;
   }
 
-  /* Mobile Touch Feedback */
-  .mygrid div:active {
-      background-color: #444; /* Darker feedback for the tap */
-      transform: scale(0.98);   /* Slight "press" effect */
-  }
 
   .about {
   padding: 80px 10%;
