@@ -206,8 +206,12 @@ main {
   line-height: 1.6;
 }
 
-.feature-text { flex: 1; }
-.feature-image { flex: 1.2; }
+.feature-text {
+    flex: 1;
+}
+.feature-image {
+    flex: 1.2;
+}
 
 .feature-image img {
   width: 100%;
