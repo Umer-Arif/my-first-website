@@ -4,13 +4,13 @@
 :root {
   /* LIGHT MODE COLORS */
   --bg-body: #ffffff;
-  --bg-header: #f8f9fa;
+  --bg-header: #ffecd9;
   --bg-card: #f1f5f9;
   --text-main: #171717;
   --text-muted: #666666;
   --border-color: #e2e8f0;
   --h3-blue: #0070f3; /* Stronger blue for light background */
-  --footer-bg: #f8f9fa;
+  --footer-bg: #ffecd9;
   --transition: all 0.3s ease;
 }
 
