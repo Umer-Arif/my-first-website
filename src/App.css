@@ -22,7 +22,7 @@
   --text-main: #ffffff;
   --text-muted: #9ca3af;
   --border-color: #333333;
-3  --h3-blue: #38bdf8; /* Brighter "Sky Blue" for dark background */
+  --h3-blue: #38bdf8; /* Brighter "Sky Blue" for dark background */
   --footer-bg: #111111;
 }
 
