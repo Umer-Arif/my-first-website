@@ -1,37 +1,67 @@
-/* 1. Global Reset & Body */
+/* ============================================================
+   1. THEME VARIABLES (The "Control Panel")
+   ============================================================ */
+:root {
+  /* LIGHT MODE COLORS */
+  --bg-body: #ffffff;
+  --bg-header: #f8f9fa;
+  --bg-card: #f1f5f9;
+  --text-main: #171717;
+  --text-muted: #666666;
+  --border-color: #e2e8f0;
+  --h3-blue: #0070f3; /* Stronger blue for light background */
+  --footer-bg: #f8f9fa;
+  --transition: all 0.3s ease;
+}
+
+[data-theme='dark'] {
+  /* DARK MODE COLORS (Your Original Design) */
+  --bg-body: #202021;
+  --bg-header: #111111;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --border-color: #333333;
+  --h3-blue: #38bdf8; /* Brighter "Sky Blue" for dark background */
+  --footer-bg: #111111;
+}
+
+/* ============================================================
+   2. GLOBAL RESET & BODY
+   ============================================================ */
 * {
-  box-sizing: border-box; /* Crucial for mobile */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html, body, #root {
   min-height: 100vh;
-  background-color: #202021; /* Consistent dark background */
-  color: white;
+  background-color: var(--bg-body);
+  color: var(--text-main);
   font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-
 
 #root {
   display: flex;
   flex-direction: column;
 }
 
-/* 2. Header & Navigation - FIXED GAP */
+/* ============================================================
+   3. HEADER & NAVIGATION
+   ============================================================ */
 .app-header {
-  background-color: #111111;
+  background-color: var(--bg-header);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Replaced gap: 700px */
+  justify-content: space-between;
   padding: 10px 5%;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
 }
 
-
 .app-header svg {
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 .app-header nav {
@@ -40,18 +70,24 @@ html, body, #root {
 }
 
 .app-header a {
-  color: grey;
+  color: var(--text-muted);
   text-decoration: none;
+  transition: var(--transition);
 }
 
-/* 3. Main Content Area */
+.app-header a:hover {
+  color: var(--h3-blue);
+}
+
+/* ============================================================
+   4. MAIN CONTENT & HOME PAGE
+   ============================================================ */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* 4. Home Page Styles */
 .myhome {
   display: flex;
   flex-direction: column;
@@ -67,25 +103,28 @@ main {
 }
 
 .home-more-btn {
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle white tint */
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px); /* Makes it look like frosted glass */
+  backdrop-filter: blur(5px);
   padding: 10px 30px;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
 .home-more-btn:hover {
   background-color: white;
-  color: #3a7bd5; /* The blue from your gradient */
+  color: #3a7bd5;
 }
 
-
+/* ============================================================
+   5. GRID SECTION
+   ============================================================ */
 .mygrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   padding: 50px 10%;
   max-width: 1400px;
@@ -93,22 +132,30 @@ main {
 }
 
 .mygrid div {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
   padding: 40px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  color: lightgrey;
-  text-decoration: none;
-
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  color: var(--text-muted);
 }
-
-
 
 .mygrid div:hover {
   transform: translateY(-10px);
-  border-color: #00d2ff;
+  border-color: var(--h3-blue);
   box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+  cursor: pointer;
+}
+
+/* ============================================================
+   6. ABOUT & FEATURES
+   ============================================================ */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .about h1 {
@@ -116,27 +163,16 @@ main {
   background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.about {
-  padding: 80px 20px;
-  text-align: center;
-
-  /* ADD THESE THREE LINES */
-  max-width: 850px;   /* Prevents text from stretching across the whole screen */
-  margin: 0 auto;     /* Centers the box on the page */
-  width: 90%;         /* Fallback for smaller screens */
+  margin-bottom: 20px;
 }
 
 .about p {
-  text-align: center;
-  line-height: 1.8;   /* Adds breathing room between lines of text */
-  font-size: 1.15rem; /* Makes the text slightly more readable */
-  margin-bottom: 25px; /* Adds space between your two paragraphs */
-  color: #ddd;        /* Softens the white slightly for better UX */
+  line-height: 1.8;
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: var(--text-muted);
 }
 
-/* 6. Features Page Styles */
 .myfeatures {
   text-align: center;
   padding: 60px 0;
@@ -150,7 +186,6 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
-
 }
 
 .feature-row {
@@ -158,19 +193,18 @@ main {
   align-items: center;
   gap: 160px;
   margin-bottom: 100px;
-  color: lightgray;
-}
-
-.feature-row h3 + p {
-    margin-top: 15px; /* Adjust this number to get the space you want */
-    line-height: 1.6;
+  color: var(--text-muted);
 }
 
 .feature-row h3 {
-    color: #a6ceff;
+  color: var(--h3-blue);
+  font-size: 1.8rem;
 }
 
-
+.feature-row h3 + p {
+  margin-top: 12px; /* The space we discussed */
+  line-height: 1.6;
+}
 
 .feature-text { flex: 1; }
 .feature-image { flex: 1.2; }
@@ -178,20 +212,24 @@ main {
 .feature-image img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: 0.4s ease;
 }
 
-/* 7. Footer */
+/* ============================================================
+   7. FOOTER
+   ============================================================ */
 .app-footer {
-  background-color: #111;
+  background-color: var(--footer-bg);
   padding: 20px;
-  color: #777;
+  color: var(--text-muted);
   text-align: center;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border-color);
 }
 
-/* 8. MOBILE RESPONSIVE BLOCK */
+/* ============================================================
+   8. MOBILE RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
   .app-header {
     flex-direction: column;
@@ -199,27 +237,19 @@ main {
   }
 
   .myhome {
-    background-image: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); /* Remove img on mobile for speed */
+    background-image: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
     text-align: center;
     align-items: center;
     padding: 40px 20px;
   }
 
   .mygrid {
-    grid-template-columns: 1fr; /* Stack boxes */
+    grid-template-columns: 1fr;
     padding: 30px 20px;
   }
 
-
-  .about {
-  padding: 80px 10%;
-  text-align: center;
-  width: 100%; /* Fixed from 200% */
-  }
-
-
   .feature-row {
-    flex-direction: column !important; /* Stack text/image */
+    flex-direction: column !important;
     text-align: center;
     gap: 30px;
   }
